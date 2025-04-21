@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "users-test-task"
+version = "0.1.0"
+description = "A Python web service using LiteStar and PostgreSQL."
+authors = ["Alexander Pantyukhin <apantykhin@gmail.com>"]
+license = "MIT"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1"
+litestar = { extras = ["standard"], version = "^2" }
+litestar-granian = "^0"
+litestar-asyncpg = "^0"
+advanced-alchemy = "^0.20"
+msgspec = "^0.18.6"
+asyncpg = "^0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0"
+pytest-asyncio = "^0.20"
+alembic = "^1.11.1"
+
+[tool.poetry.scripts]
+advanced-alchemy = "advanced_alchemy.cli:cli"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.litestar.app]
+path = "app.py"
+attribute = "app"
+
+[tool.litestar.database]
+connection_string = "postgresql+asyncpg://postgres:postgres@db:5432/users_test_task"
+metadata_module = "models"
+base_class = "Base"
+
+[tool.alembic]
+script_location = "migrations"
+sqlalchemy.url = "postgresql+asyncpg://postgres:postgres@db:5432/users_test_task"
