@@ -42,30 +42,17 @@ litar-web-service
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd litar-web-service
+   git clone https://github.com/alexpantyukhin/user_crud
+   cd user_crud
    ```
 
-2. **Install Dependencies**:
-   Ensure you have Python and pip installed, then run:
+2. **Run Docker Compose**:
+   Make sure Docker is installed and running on your system. Then, execute the following command to start the application and its dependencies:
    ```bash
-   pip install -r requirements.txt
+   docker-compose up --build
    ```
 
-3. **Configure Database**:
-   Update the `config.py` file with your PostgreSQL database connection details.
-
-4. **Run Migrations**:
-   Use Alembic to set up the database schema:
-   ```bash
-   alembic upgrade head
-   ```
-
-5. **Start the Application**:
-   Run the application:
-   ```bash
-   python app/main.py
-   ```
+   This will build the Docker images, start the PostgreSQL database, apply migrations, and run the application.
 
 ## Usage
 
