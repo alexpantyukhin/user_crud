@@ -1,4 +1,4 @@
-# Litar Web Service
+# LiteStar Web Service
 
 This project is a Python web service built using LiteStar and Advanced-SQLAlchemy, designed for user management with a PostgreSQL database.
 
